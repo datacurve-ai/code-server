@@ -132,7 +132,8 @@ npm run build
 VERSION=0.0.0 npm run build:vscode
 npm run release
 ```
-
+> [!NOTE]
+> `VERSION=0.0.0 npm run build:vscode` may take well over an hour, and more cores don't seem to improve it.
 This does not keep `node_modules`. If you want them to be kept, use
 `KEEP_MODULES=1 npm run release`
 
@@ -144,6 +145,9 @@ npm install --omit=dev # Skip if you used KEEP_MODULES=1
 # Runs the built JavaScript with Node.
 node .
 ```
+> [!NOTE]
+> If this fails with the error "error Please specify at least one file or folder"
+> Usually `unset VSCODE_IPC_HOOK_CLI` will fix it
 
 Then, to build the release package:
 
